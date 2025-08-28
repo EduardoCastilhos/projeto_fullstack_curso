@@ -1,7 +1,11 @@
-import Fastify, { fastify } from 'fastify'
-import { env } from './env'
+import  Fastify  from 'fastify'
 
-export async function buildApp(){
-  const app = Fastify({logger: true})
+export async function builApp(){
+  const app = Fastify({logger:true})
+
+  app.get('/api', ()=>{
+    return {message: 'Hi People'}
+  })
+  
   return app
 }

@@ -1,9 +1,9 @@
-import { env } from './env'
-import { buildApp } from './app'
+import {env} from 'env'
+import { builApp } from 'app'
 
-async function startServer(){
-  const app = await buildApp()
-  await app.listen({host:'0.0.0.0',port:env.PORT})
-  console.log(`Server listening port ${env.PORT}`)
+async function bootstrap(){
+  const app = await builApp()
+  await app.listen({port:env.PORT})
+  console.log(`Server is runnig on port ${env.PORT}`)
 }
-startServer()
+bootstrap()

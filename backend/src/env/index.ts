@@ -2,15 +2,16 @@ import 'dotenv/config'
 import {z} from 'zod'
 
 const envSchema = z.object({
-  DATABASE_URL: z.url({message:'Digite uma URL válida!'}),
-  PORT: z.coerce.number().default(3333)
+  NODE_ENV: z.enum(['dev', 'test','production']),
+  PORT: z.coerce.number().default(3333),
+  JWT_SECRET: z.string(),
+  DATABASE_URL: z.url({message:'Invalid URL'})
 })
 
 const _env = envSchema.safeParse(process.env)
 
 if(_env.success === false){
-  console.error('Erro ao configurar as variáveis de ambiente')
-  throw new Error('Variáveis de ambiente inválidas')
+  throw new Error('Incorrect configuration')
 }
 
 export const env = _env.data
