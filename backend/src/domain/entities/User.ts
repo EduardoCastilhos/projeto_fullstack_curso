@@ -24,7 +24,7 @@ export class User{
   get name() {return this.props.name}
   get email() {return this.props.email}
   get password() {return this.props.password}
-  get avatarUrl() {return this.props.password}
+  get avatarUrl() {return this.props.avatarUrl}
   get createdAt() {return this.props.createdAt}
 
 }
