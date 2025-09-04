@@ -15,5 +15,5 @@ model User {
   avatarUrl String?
   createdAt DateTime @default(now())
 
-  @@map("users")
+  @@map("users") // altera o nome da tabela
 }
