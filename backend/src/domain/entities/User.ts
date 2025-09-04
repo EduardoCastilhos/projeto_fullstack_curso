@@ -17,7 +17,7 @@ export class User{
     }
   }
 
-  get id() {return this.props.id}
+  get id() {return this.props.id!}
   get name() {return this.props.name}
   get email() {return this.props.email}
   get password() {return this.props.password}
