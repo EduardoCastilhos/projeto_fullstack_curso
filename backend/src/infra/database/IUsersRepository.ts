@@ -11,6 +11,6 @@ export interface IUsersRepository{
   findById(id:string):Promise<User|null>
   findByEmail(email:string):Promise<User|null>
   findAll():Promise<User[]>
-  update(id:string, data:Partial<CreateUserDTO>):Promise<User || null>
+  update(id:string, data:Partial<CreateUserDTO>):Promise<User|null>
   delete(id:string):Promise<void>
 }
